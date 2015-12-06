@@ -10,10 +10,10 @@ from streamparse.spout import Spout
 # Twitter credentials
 ################################################################################
 twitter_credentials = {
-    "consumer_key"        :  "<enter your consumer key>",
-    "consumer_secret"     :  "<enter your consumer secret key>",
-    "access_token"        :  "<enter your access token>",
-    "access_token_secret" :  "<enter your access token secret key>",
+    "consumer_key"        :  "CDPJ2cCoN1s5s3q2NZJgRy0au",
+    "consumer_secret"     :  "dCGHtQHCaY0tfxR0IH0545HGz3rZLgCRjmFjsITwtdj0A1nSRo",
+    "access_token"        :  "7545822-1NKFqwL31JXePMKfpOHTyaJDn28dA9tOcbQpxiK33z",
+    "access_token_secret" :  "jn5lhaikadBmb1ocwAY3pedXLosiBOCsaBOYWMa9065XW",
 }
 
 def auth_get(auth_key):
@@ -59,9 +59,9 @@ class Tweets(Spout):
         # Create the listener for twitter stream
         listener = TweetStreamListener(self)
 
-        # Create the stream and listen for english tweets
+        # Create the stream and listen for spanish tweets
         stream = tweepy.Stream(auth, listener, timeout=None)
-        stream.filter(languages=["en"], track=["a", "the", "i", "you", "u"], async=True)
+        stream.filter(languages=["es"], track=["un", "el", "yo", "tu", "la", "como", "es"], async=True)
 
     def queue(self):
         return self._queue
