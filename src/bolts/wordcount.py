@@ -16,9 +16,10 @@ class WordCounter(Bolt):
         word = tup.values[0]
         conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
         cur = conn.cursor()  
+        initial_count = 1
         #Insert
         cur.execute("INSERT INTO Tweetwordcount (word,count) \
-              VALUES (%s, 1)", (word)) ;
+              VALUES (%s, %d)", (word,initial_count)) ;
         conn.commit()
         
         
