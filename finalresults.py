@@ -3,7 +3,7 @@ import psycopg2
 input_word = raw_input('--> ')
 input_word = str(input_word)
 
-input_word = input_word[0:len(input_word)]
+input_word = input_word[1:-1]
 
 conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
 cur = conn.cursor()
