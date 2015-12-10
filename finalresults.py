@@ -16,7 +16,7 @@ def emptyline(self):
             return self.onecmd('\n')
         else: 
             input_word = self.lastcmd
-            print word
+            print input_word
             cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s", (input_word))
             input_count = cur.fetchall()
             print "Total number of occurences of ""%s"": %s"%(input_word, input_count)
