@@ -19,9 +19,8 @@ cur = conn.cursor()
     
 if total > 1:
     input_word = str(sys.argv[1])
-    print input_word
-    input_count = 1
-    cur.execute("SELECT count FROM Tweetwordcount WHERE count=%s LIMIT 10;", (input_count))
+    print "'%s'" % input_word
+    cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s", (input_word))
     input_count = cur.fetchall()
     print """ Total number of occurences of "%s": %s"""%(input_word,input_count[0][0])
 else:
