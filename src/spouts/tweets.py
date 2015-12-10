@@ -61,7 +61,7 @@ class Tweets(Spout):
 
         # Create the stream and listen for spanish tweets
         stream = tweepy.Stream(auth, listener, timeout=None)
-        stream.filter(languages=["es"], track=["Capriles", "Leopoldo", "Maduro", "Cabello", "Chavistas", "chavista", "oposicion", "opositor", "cambio", "capriles", "asamblea"]&locations=[12.29,-73.30, 0.61,-59.58], async=True)
+        stream.filter(languages=["es"], track=["Capriles", "Leopoldo", "Maduro", "Cabello", "Chavistas", "chavista", "oposicion", "opositor", "cambio", "capriles", "asamblea"]&locations=12.29,-73.30, 0.61,-59.58, async=True)
 
     def queue(self):
         return self._queue
