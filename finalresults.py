@@ -9,7 +9,7 @@ total = len(sys.argv)
 cmdargs = str(sys.argv)
 
 def wrapper(s1):
-    return "'%s'" % s1
+    return """%s""" % s1
  
 # Print it
 print ("The total numbers of args passed to the script: %d " % total)
