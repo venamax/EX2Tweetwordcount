@@ -37,7 +37,7 @@ class WordCounter(Bolt):
                   VALUES (%s, %s)", (word,initial_count)) ;
             conn.commit()
         
-         conn.close()   
+        conn.close()   
         # Write codes to increment the word count in Postgres
         # Use psycopg to interact with Postgres
         # Database name: Tcount 
