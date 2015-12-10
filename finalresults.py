@@ -1,6 +1,6 @@
 import psycopg2
 
-input_word = input()
+input_word = raw_input("Word to find:")
 
 conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
 cur = conn.cursor()
