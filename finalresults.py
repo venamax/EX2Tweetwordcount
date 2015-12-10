@@ -30,7 +30,7 @@ else:
     cur.execute("SELECT word, count FROM Tweetwordcount ORDER BY word ASC")
     records = cur.fetchall()
     for rec in records:
-       print rec "\n"
+       print rec, "\n"
     conn.commit()
 
 
