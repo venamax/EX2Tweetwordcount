@@ -13,15 +13,12 @@ cmdargs = str(sys.argv)
 print ("The total numbers of args passed to the script: %d " % total)
 print ("Args list: %s " % cmdargs)
 
-def wrap_and_encode(x):
-    return encode("'%s'" % x)
-
 conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
 cur = conn.cursor()
     
 if total > 1:
     input_word = str(sys.argv[1])
-    input_word = wrap_and_encode(input_word)
+    input_word = concatenate(''',input_word,''')
     print imput_word
     cur.execute(" SELECT count FROM Tweetwordcount WHERE word=%s ", (input_word))
     input_count = cur.fetchall()
