@@ -13,10 +13,10 @@ class WordCounter(Bolt):
 #Create a Table
 #The first step is to create a cursor. 
 
-        cur = conn.cursor()
-        cur.execute('''CREATE TABLE Tweetwordcount
-        (word TEXT PRIMARY KEY     NOT NULL, count INT     NOT NULL);''')
-        conn.commit()
+##        cur = conn.cursor()
+##        cur.execute('''CREATE TABLE Tweetwordcount
+##        (word TEXT PRIMARY KEY     NOT NULL, count INT     NOT NULL);''')
+##        conn.commit()
 ##        conn.close()   
      
 
