@@ -18,7 +18,7 @@ class WordCounter(Bolt):
         cur = conn.cursor()  
         #Insert
         cur.execute("INSERT INTO Tweetwordcount (word,count) \
-              VALUES ('%s', 1)") % (word);
+              VALUES ('%s' % (word), 1)") ;
         conn.commit()
         
         
