@@ -1,3 +1,4 @@
+import psycopg2
 
 input_word = raw_input(str(input))
 
