@@ -9,7 +9,6 @@ class WordCounter(Bolt):
 
     def initialize(self, conf, ctx):
         self.counts = Counter()
-        conn.close()
         conn = psycopg2.connect(database="Tcount", user="postgres", password="pass", host="localhost", port="5432")
 #Create a Table
 #The first step is to create a cursor. 
