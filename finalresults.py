@@ -22,7 +22,7 @@ if total > 1:
 
     input_word = wrapper(sys.argv[1])
     print input_word
-    cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s", (str(input_word),))
+    cur.execute("SELECT count FROM Tweetwordcount WHERE word='Maduro'")
     input_count = cur.fetchall()
     print " Total number of occurences of %s: %s"%(input_word,input_count[0][0])
 else:
