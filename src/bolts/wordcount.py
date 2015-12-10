@@ -22,10 +22,10 @@ class WordCounter(Bolt):
         records = cur.fetchall()
         repeat_word = False
         for rec in records:
-            if rec[0] = word:
+            if rec[0] == word:
                 repeat_word= True    
         
-        if repeat_word = True:
+        if repeat_word == True:
         # Increment the local count
             self.counts[word] += 1
             self.emit([word, self.counts[word]])
