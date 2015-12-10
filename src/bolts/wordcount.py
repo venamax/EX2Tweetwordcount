@@ -34,7 +34,7 @@ class WordCounter(Bolt):
         self.counts[word] += 1
         self.emit([word, self.counts[word]])
 
-        cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (word, self.counts[word]))
+        cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (self.counts[word],word))
         conn.commit()
         conn.close()
         # Log the count - just to see the topology running
