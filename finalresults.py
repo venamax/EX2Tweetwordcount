@@ -1,6 +1,6 @@
-import urllib2
 import psycopg2
 import sys
+import urllib2
  
 # Get the total number of args passed to the demo.py
 total = len(sys.argv)
@@ -19,7 +19,7 @@ cur = conn.cursor()
     
 if total > 1:
     input_word = str(sys.argv[1])
-    input_word = urllib2.quote("'" + input_word + "'")
+    input_word = urllib2.quote(input_word)
     print input_word
     cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s",input_word)
     input_count = cur.fetchall()
