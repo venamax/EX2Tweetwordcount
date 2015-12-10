@@ -20,7 +20,7 @@ cur = conn.cursor()
 if total > 1:
     input_word = str(sys.argv[1])
     print input_word
-    query = '"SELECT count FROM Tweetwordcount WHERE word='%s'" % (input_word)
+    query = "SELECT count FROM Tweetwordcount WHERE word='%s'" % (input_word)
     print query
     print '"%s"' % query
     cur.execute('"%s"', query)
