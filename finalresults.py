@@ -20,8 +20,8 @@ cur = conn.cursor()
 if total > 1:
     input_word = str(sys.argv[1])
     input_word = dict(input_word=input_word)
-    print input_word
-    cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s",input_word)
+    print input_word.values
+    cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s",input_word.values)
     input_count = cur.fetchall()
     print """ Total number of occurences of "%s": %s"""%(input_word,input_count[0][0])
 else:
