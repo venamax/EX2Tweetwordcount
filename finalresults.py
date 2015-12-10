@@ -1,6 +1,6 @@
 import psycopg2
 import sys
-import urllib2
+import codecs
  
 # Get the total number of args passed to the finalresults.py
 total = len(sys.argv)
