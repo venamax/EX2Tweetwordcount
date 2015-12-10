@@ -19,7 +19,7 @@ def emptyline(self):
             print input_word
             cur.execute("SELECT count FROM Tweetwordcount WHERE word=Capriles")
             input_count = cur.fetchall()
-            print "Total number of occurences of "Capriles": %s"%(input_count)
+            print "Total number of occurences of ""Capriles"": %s"%(input_count)
 
 emptyline(cmd.Cmd)
 
