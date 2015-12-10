@@ -21,4 +21,4 @@ def emptyline(self):
             input_count = cur.fetchall()
             print "Total number of occurences of ""%s"": %s"%(input_word, input_count)
 
-emptyline(self)
+emptyline(cmd)
