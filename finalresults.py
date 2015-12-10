@@ -25,8 +25,13 @@ if total > 1:
     cur.execute("""SELECT count FROM Tweetwordcount WHERE word=%s""", (input_word,))
     input_count = cur.fetchall()
     print """ Total number of occurences of "%s": %s"""%(input_word,input_count[0][0])
+    conn.commit()
 else:
-    print "yeahhnnnh"
+    cur.execute("SELECT word, count FROM Tweetwordcount ORDER BY word ASC")
+    records = cur.fetchall()
+    for rec in records:
+       print rec "\n"
+    conn.commit()
 
 
  
