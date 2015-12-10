@@ -24,7 +24,7 @@ if total > 1:
     input_count = cur.fetchall()
     print """ Total number of occurences of "%s": %s"""%(input_word,input_count[0][0])
 else:
-    print "yeahhh"
+    print "yeahhnnnh"
 
 
  
