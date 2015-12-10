@@ -20,8 +20,12 @@ class WordCounter(Bolt):
         
         cur.execute("SELECT word, count from Tweetwordcount")
         records = cur.fetchall()
+        repeat_word = False
+        for rec in records:
+            if rec[0] = word:
+                repeat_word= True    
         
-        if records[1] > 0:
+        if repeat_word = True:
         # Increment the local count
             self.counts[word] += 1
             self.emit([word, self.counts[word]])
@@ -30,12 +34,18 @@ class WordCounter(Bolt):
             conn.commit()
         
         else:
-        
-        
         #Insert
             cur.execute("INSERT INTO Tweetwordcount (word,count) \
                   VALUES (%s, %s)", (word,initial_count)) ;
             conn.commit()
+        
+
+
+        
+
+        
+        
+
         
         conn.close()   
         # Write codes to increment the word count in Postgres
