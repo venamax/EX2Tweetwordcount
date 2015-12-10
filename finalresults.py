@@ -6,7 +6,7 @@ conn = psycopg2.connect(database="tcount", user="postgres", password="pass", hos
 cur = conn.cursor()
 
 
-if word != '':
+if input_word != '':
 
     cur.execute("SELECT count from Tweetwordcount WHERE word = %s", input_word)
     input_count = cur.fetchall()
