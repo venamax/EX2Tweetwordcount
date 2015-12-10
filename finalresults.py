@@ -19,7 +19,7 @@ cur = conn.cursor()
     
 if total > 1:
     input_word = str(sys.argv[1])
-    input_word = urllib.quote("'{}'".format(input_word))
+    input_word = urllib2.quote("'{}'".format(input_word))
     print input_word
     cur.execute("SELECT count FROM Tweetwordcount WHERE word=%s",input_word)
     input_count = cur.fetchall()
