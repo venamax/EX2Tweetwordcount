@@ -22,7 +22,7 @@ if total > 1:
     cur.execute("SELECT word, count FROM Tweetwordcount WHERE count > %s AND count < %s",(low_range,high_range))
     records = cur.fetchall()
     for rec in records:
-        print """  "%s": %s"""%(reco[0],rec[1])
+        print """  "%s": %s"""%(rec[0],rec[1])
     conn.commit()
 else:
     print "No range given"
