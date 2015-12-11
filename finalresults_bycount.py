@@ -1,5 +1,6 @@
 import psycopg2
 import sys
+import seaborn as sns
 
 
  
@@ -30,7 +31,13 @@ else:
        print rec, "\n"
        
     conn.commit()
-    
-  
+
+
+    data = pd.DataFrame(records, columns=['word', 'count']) 
+    sns.set(style="whitegrid", color_codes=True)
+    dims = (16, 32)
+    fig, ax = plt.subplots(figsize=dims)
+    sns.barplot(x="word", y="count", data=data,ax=ax )
+    plt.savefig("plot.png")
 
  
