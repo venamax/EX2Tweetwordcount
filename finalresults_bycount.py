@@ -1,10 +1,6 @@
 import psycopg2
 import sys
-import pandas as pd
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set(style="whitegrid", color_codes=True)
+
 
  
 # Get the total number of args passed to the finalresults.py
@@ -35,12 +31,6 @@ else:
        
     conn.commit()
     
-    data = pd.DataFrame(records, columns=['word', 'count']) 
-    sns.set(style="whitegrid", color_codes=True)
-    dims = (16, 32)
-    fig, ax = plt.subplots(figsize=dims)
-    sns.barplot(x="word", y="count", data=data)
-    plt.savefig("output.png")
-    
+  
 
  
