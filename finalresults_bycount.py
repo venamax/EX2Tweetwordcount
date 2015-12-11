@@ -24,7 +24,7 @@ if total > 1:
     print """ Total number of occurences of "%s": %s"""%(input_word,input_count[0][0])
     conn.commit()
 else:
-    cur.execute("SELECT word, count FROM Tweetwordcount WHERE len(word) > 3 ORDER BY count DESC LIMIT 20;")
+    cur.execute("SELECT word, count FROM Tweetwordcount ORDER BY count DESC LIMIT 20;")
     records = cur.fetchall()
     for rec in records:
        print rec, "\n"
