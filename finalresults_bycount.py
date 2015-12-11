@@ -1,5 +1,11 @@
 import psycopg2
 import sys
+import numpy as np
+import pandas as pd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style="whitegrid", color_codes=True)
 
  
 # Get the total number of args passed to the finalresults.py
@@ -23,11 +29,19 @@ if total > 1:
     print """ Total number of occurences of "%s": %s"""%(input_word,input_count[0][0])
     conn.commit()
 else:
-    cur.execute("SELECT word, count FROM Tweetwordcount ORDER BY count DESC")
+    cur.execute("SELECT word, count FROM Tweetwordcount WHERE len(word) > 3 ORDER BY count DESC LIMIT 20;")
     records = cur.fetchall()
     for rec in records:
        print rec, "\n"
+       
     conn.commit()
-
+    
+    data = pd.DataFrame(records, columns=['word', 'count']) 
+    sns.set(style="whitegrid", color_codes=True)
+    dims = (16, 32)
+    fig, ax = plt.subplots(figsize=dims)
+    sns.barplot(x="word", y="count", data=data)
+    plt.savefig("output.png")
+    
 
  
