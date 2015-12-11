@@ -19,7 +19,7 @@ if total > 1:
 
     low_range = sys.argv[1]*1
     high_range = sys.argv[2]*1
-    cur.execute("SELECT word, count FROM Tweetwordcount WHERE count > %s AND count < %s" (low_range,high_range))
+    cur.execute("SELECT word, count FROM Tweetwordcount WHERE count > %s AND count < %s",(low_range,high_range))
     records = cur.fetchall()
     for rec in records:
         print """  "%s": %s"""%(reco[0],rec[1])
