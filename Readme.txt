@@ -1,10 +1,11 @@
 Instructions to run application
 
 1.	Connect to instance
-2.	Turn on the data hose by typing “sparse run” on the EX@Tweetwordcount directory where all files reside. CLI: $sparse run
-3.	To find out the count associated to a specific term run the following line on the CLI: $python finalresults.py ,<search_term>
-4.	To list all terms and their counts at any moment run the following line on the CLI: $python finalresults.py
-5.	Use Tableau to connect to the Postgres database to generate visualizations making sure that port 5432.
+2.	Start counter from scratch. CLI: $python dropaddtable.py
+3.	Turn on the data hose by typing “sparse run” on the EX@Tweetwordcount directory where all files reside. CLI: $sparse run
+4.	To find out the count associated to a specific term run the following line on the CLI: $python finalresults.py ,<search_term>
+5.	To list all terms and their counts at any moment run the following line on the CLI: $python finalresults.py
+6.	Use Tableau to connect to the Postgres database to generate visualizations making sure that port 5432.
 
 Key Files  and Data Directory
 
